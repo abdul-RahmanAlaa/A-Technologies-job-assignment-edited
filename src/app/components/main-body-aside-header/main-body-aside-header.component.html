@@ -2,8 +2,10 @@
   <header class="calendar__header" [ngClass]="isArabic ? 'rtl' : 'ltr'">
     <div>
       <h3>{{ labelsService.calendarLabels[0] }}</h3>
-      <img src="../../../assets/icons/icon (1).svg" alt="" />
-      <img src="../../../assets/icons/icon.svg" alt="" />
+      <img *ngIf="isArabic" src="../../../assets/icons/icon.svg" alt="" />
+      <img *ngIf="isArabic" src="../../../assets/icons/icon (1).svg" alt="" />
+      <img *ngIf="!isArabic" src="../../../assets/icons/icon (1).svg" alt="" />
+      <img *ngIf="!isArabic" src="../../../assets/icons/icon.svg" alt="" />
     </div>
     <div>
       <a role="button">
@@ -20,10 +22,15 @@
       <li
         *ngFor="let data of labelsService.dates; let index = index"
         (click)="pickedToggle(index)"
+        [class]="'p-' + index"
       >
         <p *ngIf="isArabic">{{ data.day[0] }}</p>
         <p *ngIf="!isArabic">{{ data.day[1] }}</p>
-        <div [ngClass]="isPicked ? '' : 'picked'" class="date">
+        <div
+          class="date"
+          [ngClass]="isPicked ? '' : 'picked'"
+          [class]="'day-' + index"
+        >
           <p class="number">{{ data.number }}</p>
         </div>
         <div>

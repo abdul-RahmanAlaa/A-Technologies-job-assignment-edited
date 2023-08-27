@@ -22,27 +22,32 @@
   position: absolute;
   display: flex;
   align-items: center;
+  justify-content: center;
   border-radius: 1rem;
   font-size: var(--fs-xxl);
   font-weight: var(--fw-l);
   background-color: var(--yellow);
   cursor: pointer;
   padding: 0.5rem;
-  z-index: 99;
-  top: 4.5rem;
 
-  left: 5rem;
+  width: 10rem;
+  height: 2rem;
+
+  z-index: 99;
+
+  top: 1rem;
+  right: 5rem;
 
   &.reverse {
-    left: auto;
-    right: 5rem;
+    right: auto;
+    left: 5rem;
   }
 
   & > img {
     transform: rotate(-180deg);
     transition: ease-in-out;
     transition-duration: 250ms;
-    margin-inline-start: 0.5rem;
+    margin-inline: 1rem;
 
     &.active {
       transform: rotate(0deg);
@@ -53,6 +58,7 @@
 }
 
 .mainMenu {
+  height: 100vh;
   min-width: 1.38rem;
   margin-inline: 1.34 0.62rem;
   background-color: var(--bg-2);
@@ -74,11 +80,11 @@
     cursor: pointer;
     top: 3.13rem;
 
-    left: 15.23rem;
+    left: 12.23rem;
 
     &.imgReverse {
       left: auto;
-      right: 15.23rem;
+      right: 12.23rem;
     }
   }
 
@@ -106,10 +112,12 @@
       }
 
       img {
-        margin: 0.61rem 1.41rem 0.66rem 1.75rem;
+        margin-block: 0.61rem 0.66rem;
+        margin-inline-start: 1.41rem;
       }
 
       &.active > picture {
+        width: 3.56rem;
         border-radius: 2.81rem 0 0 2.81rem;
         background-color: var(--yellow);
       }
@@ -118,6 +126,7 @@
       }
 
       & > .arrow {
+        margin-inline-end: 1.89rem;
         transform: rotate(-180deg);
         transition: ease-in-out;
         transition-duration: 250ms;
@@ -133,19 +142,25 @@
         visibility: hidden;
       }
     }
+
     &--child {
       list-style: none;
-      margin: 0.51rem 3.72rem 0 0;
+      margin: 0 3.72rem 0 0;
       display: flex;
 
       &.hide {
         display: none;
       }
 
-      & > div > div > li {
-        cursor: pointer;
-        margin: 0.77rem 0.7rem;
-        font-size: var(--fs-s);
+      & > div {
+        & > div {
+          margin: 0.09rem;
+          & > li {
+            cursor: pointer;
+            margin: 0.77rem 0.7rem;
+            font-size: var(--fs-s);
+          }
+        }
       }
     }
   }

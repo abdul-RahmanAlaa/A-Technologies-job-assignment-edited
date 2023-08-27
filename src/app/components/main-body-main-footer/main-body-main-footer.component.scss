@@ -1,0 +1,60 @@
+.table__footer {
+  display: flex;
+  justify-content: space-between;
+  margin-inline: 1rem;
+  padding-block: 0.81rem 0.76rem;
+
+  &--start {
+    font-size: var(--fs-xs);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & > select {
+      height: 1.5rem;
+      margin-inline: 0.5rem;
+      font-size: var(--fs-xs);
+      outline: none;
+    }
+  }
+
+  &--mid {
+    margin-inline: 10rem;
+  }
+
+  &--end {
+    display: flex;
+    font-size: var(--fs-l);
+    color: var(--border1);
+    align-items: center;
+
+    & > img {
+      width: 0.5rem;
+      margin-inline: 0.79rem;
+
+      &.revers {
+        transform: scaleX(-1);
+      }
+    }
+
+    &__pagination {
+      & > input {
+        display: none;
+      }
+
+      & > label {
+        display: inline-block;
+        width: 1.5rem;
+        margin-inline-start: 0.25rem;
+        text-align: center;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      & > input:checked ~ label {
+        background-color: var(--checkbox-blue);
+        color: var(--white);
+      }
+    }
+  }
+}

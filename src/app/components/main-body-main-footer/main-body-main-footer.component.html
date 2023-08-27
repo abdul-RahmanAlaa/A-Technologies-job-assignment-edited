@@ -1,1 +1,39 @@
-<p>main-body-main-footer works!</p>
+<footer class="table__footer">
+  <div class="table__footer--start">
+    {{ labelsService.footerData[0] }}
+
+    <select class="pagesList" name="pagesList" id="pagesList">
+      <option *ngFor="let item of labelsService.totalPages" [value]="item">
+        {{ item }}
+      </option>
+    </select>
+
+    {{ labelsService.footerData[1] }}
+
+    {{ labelsService.totalPages[labelsService.totalPages.length - 1] }}
+  </div>
+  <div class="table__footer--mid"></div>
+  <div class="table__footer--end">
+    <img role="button" disabled src="../../../assets/icons/arrows.svg" alt="" />
+    <div
+      class="table__footer--end__pagination"
+      *ngFor="let page of labelsService.pages"
+    >
+      <input
+        type="radio"
+        [id]="'page' + page"
+        name="pages"
+        [checked]="page === 1"
+      />
+      <label [for]="'page' + page" (click)="onClick($event)">
+        {{ page }}
+      </label>
+    </div>
+    <img
+      role="button"
+      class="revers"
+      src="../../../assets/icons/arrows.svg"
+      alt=""
+    />
+  </div>
+</footer>

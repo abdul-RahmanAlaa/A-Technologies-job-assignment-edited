@@ -1,5 +1,5 @@
 .calendar {
-  margin-block-start: 1.59rem;
+  padding-block-start: 1.59rem;
 
   min-width: 21rem;
   margin-inline: 0.5rem;
@@ -111,8 +111,21 @@
 
       & > div > img {
         width: 0.35rem;
-        margin-inline: 0.14rem;
+        margin-inline: 0.1rem;
       }
     }
   }
+}
+
+.p-1 {
+  background-color: var(--yellow);
+  border-radius: 0.59rem;
+}
+
+.day-1::after {
+  visibility: visible !important;
+}
+
+.day-1 > p {
+  color: var(--white) !important;
 }

@@ -9,7 +9,7 @@ export class LocalizationService {
   }
   @Output() langToggle = new EventEmitter<boolean>();
 
-  isArabic: boolean = false;
+  isArabic: boolean = true;
 
   get _isArabic() {
     return this.langToggle.asObservable();
