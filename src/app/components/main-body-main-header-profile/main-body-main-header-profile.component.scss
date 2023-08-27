@@ -1,0 +1,136 @@
+.profileSection {
+  min-width: 17.4rem;
+
+  background-color: var(--bg-2);
+
+  border: 1px var(--bg-secondary) solid;
+  border-radius: 0.47rem;
+
+  margin-block: 1rem 0.565rem;
+  margin-inline-start: 0.7rem;
+
+  padding-inline: 1.22rem 0.75rem;
+  padding-block-end: 1rem;
+
+  &--header {
+    display: flex;
+    justify-content: space-between;
+
+    padding-block-start: 1.67rem;
+
+    &__name {
+      color: var(--tc-header);
+      font-size: var(--fs-l);
+      font-weight: var(--fw-l);
+    }
+    &__date {
+      color: var(--tc-date);
+      font-size: var(--fs-3xs);
+    }
+  }
+
+  &--body {
+    display: flex;
+    justify-content: space-around;
+
+    &__data {
+      padding-block-end: 1.28rem;
+
+      &--section {
+        margin-block-start: 1rem;
+
+        & > header {
+          display: flex;
+          align-items: center;
+
+          & > img {
+            margin-inline-end: 0.23rem;
+          }
+
+          & > p {
+            color: var(--tc-date);
+            font-size: var(--fs-3xs);
+            margin: 0;
+          }
+        }
+        & > h3 {
+          color: var(--tc-profile-number);
+          font-size: var(--fs-xl);
+          font-weight: var(--fw-l);
+          margin: 0;
+        }
+      }
+    }
+
+    &__main {
+      position: relative;
+      margin-top: 1.54rem;
+      margin-inline-end: 1rem;
+
+      width: 10.25rem;
+      height: 10.25rem;
+
+      background-image: url("../../../assets/icons/green-circle.svg");
+      background-repeat: no-repeat;
+
+      &::before {
+        content: "";
+        background-image: url("../../../assets/icons/violet-circle.svg");
+        background-repeat: no-repeat;
+
+        position: absolute;
+        width: 25rem;
+        height: 25rem;
+
+        top: 1.25rem;
+        left: 1rem;
+      }
+
+      &::after {
+        content: "";
+        background-image: url("../../../assets/icons/orange-circle.svg");
+        background-repeat: no-repeat;
+
+        position: absolute;
+        width: 25rem;
+        height: 25rem;
+
+        top: 2.5rem;
+        left: 2.5rem;
+      }
+      & > .outLineDot {
+        position: absolute;
+        height: 0.56rem;
+        width: 0.56rem;
+
+        top: 2.5rem;
+        left: 9rem;
+      }
+
+      & > .midLineDot {
+        position: absolute;
+        height: 0.56rem;
+        width: 0.56rem;
+
+        top: 8.4rem;
+        left: 4.8rem;
+      }
+
+      & > .innerLineDot {
+        position: absolute;
+        height: 0.56rem;
+        width: 0.56rem;
+
+        top: 4rem;
+        left: 2.5rem;
+      }
+
+      & > .employee {
+        position: absolute;
+
+        top: 3.5rem;
+        left: 3.5rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,63 @@
+<section class="bodyCards">
+  <div class="bodyCards--card bgOrange">
+    <div class="bodyCards--card__header">
+      <h3>
+        {{ labelsService.cardData[0] }}
+      </h3>
+    </div>
+
+    <div class="bodyCards--card__body">
+      <h3>
+        {{ labelsService.cardNumbers[0] }}
+      </h3>
+      <img src="../../../assets/icons/timer-start.svg" alt="" />
+    </div>
+    <img
+      class="decoration"
+      [ngClass]="isArabic ? '' : 'reverse'"
+      src="../../../assets/icons/Mask Group orange.svg"
+      alt=""
+    />
+  </div>
+  <div class="bodyCards--card bgViolet">
+    <div class="bodyCards--card__header">
+      <h3>
+        {{ labelsService.cardData[1] }}
+      </h3>
+    </div>
+
+    <div class="bodyCards--card__body">
+      <h3>
+        {{ labelsService.cardNumbers[1] }}
+      </h3>
+      <img src="../../../assets/icons/calendar.svg" alt="" />
+    </div>
+    <img
+      class="decoration"
+      [ngClass]="isArabic ? '' : 'reverse'"
+      src="../../../assets/icons/Mask Group violet.svg"
+      alt=""
+    />
+  </div>
+  <div class="bodyCards--card bgGreen">
+    <div class="bodyCards--card__header">
+      <h3>
+        {{ labelsService.cardData[2] }}
+      </h3>
+    </div>
+
+    <div class="bodyCards--card__body">
+      <h3>
+        {{ labelsService.cardNumbers[2] }}
+      </h3>
+      <img src="../../../assets/icons/tick-circle.svg" alt="" />
+    </div>
+
+    <img
+      class="decoration"
+      [ngClass]="isArabic ? '' : 'reverse'"
+      src="../../../assets/icons/Mask Group green.svg"
+      alt=""
+    />
+  </div>
+</section>

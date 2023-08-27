@@ -1,1 +1,120 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: "Neo Sans Arabic Regular";
+  src: url("./assets/fonts/alfont_com_NeoSansArabic.ttf");
+}
+
+:root {
+  // colors
+
+  --bg-1: #f6f6f6;
+  --bg-2: #fff;
+  --bg-3: #1c1c28;
+
+  --white: #fff;
+  --yellow: #feee00;
+  --blue: #2385ea;
+  --orange: #ff9a3e;
+  --violet: #7661e2;
+  --green: #3dd598;
+
+  --checkbox-blue: #0771de;
+  --chart-2: #fdb841;
+
+  --calendar-btn: #f7f6fd;
+  --calendar-label: #b4b4b4;
+  --calendar-circle: #292d32;
+  --calendar-border:#eeedf2;
+
+
+  // colors --> text
+
+  --tc-main: #2e2e2e;
+  --tc-header: #23262f;
+  --tc-disabled: #cfcfcf;
+
+  --tc-number: #1c1c28;
+  --tc-profile-number: #000;
+
+  --tc-placeholder: rgba(146, 161, 173, 0.4);
+  --tc-date: #787486;
+  --tc-clock: #76778b;
+
+  --tc-table-header: #5a5a67;
+  --tc-1st-col: #99a1b7;
+
+  --tc-menu: #6c6c6c;
+
+  --tc-chartT1: #b6baca;
+  --tc-chartT2: #6b7181;
+
+  --tc-footer: #333;
+
+  //font
+
+  --fs-3xl: 1.17188rem;
+  --fs-xxl: 0.90819rem;
+  --fs-xl: 0.84375rem;
+  --fs-l: 0.75rem;
+  --fs-m: 0.70313rem;
+  --fs-s: 0.65625rem;
+  --fs-xs: 0.61281rem;
+  --fs-xxs: 0.59375rem;
+  --fs-3xs: 0.5625rem;
+  --fs-4xs: 0.51563rem;
+  --fs-5xs: 0.46875rem;
+
+  --fw-l: 700;
+  --fw-m: 500;
+  --fw-s: 400;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Neo Sans Arabic Regular" !important;
+  font-weight: var(--fw-s);
+}
+
+img,
+svg,
+video {
+  max-width: 100%;
+  display: block;
+}
+
+body {
+  background-color: var(--bg-1);
+}
+
+// the UTILITY classes
+
+.visually-hidden {
+  position: absolute;
+  clip: rect(1px 1px 1px 1px);
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.rtl {
+  direction: rtl !important;
+}
+
+.ltr {
+  direction: ltr !important;
+}
+
+.reverse {
+  flex-direction: row-reverse;
+}
+
+.imgReverse {
+  transform: scaleX(-1);
+}
+// end of the UTILITY classes

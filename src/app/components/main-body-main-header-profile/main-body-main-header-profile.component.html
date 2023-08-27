@@ -1,0 +1,80 @@
+<section class="profileSection">
+  <header class="profileSection--header">
+    <h3 class="profileSection--header__name">
+      {{ labelsService.profileData[0] }}
+    </h3>
+
+    <h4 class="profileSection--header__date">
+      {{ labelsService.profileData[5] }}
+      <!-- we well back  -->
+    </h4>
+  </header>
+
+  <div class="profileSection--body">
+    <div class="profileSection--body__data">
+      <div class="profileSection--body__data--section">
+        <header>
+          <img src="../../../assets/icons/green-dot.svg" alt="" />
+
+          <p>
+            {{ labelsService.profileData[1] }}
+          </p>
+        </header>
+
+        <h3>
+          {{ labelsService.profileNumbers[0] }}
+        </h3>
+      </div>
+
+      <div class="profileSection--body__data--section">
+        <header>
+          <img src="../../../assets/icons/violet-dot.svg" alt="" />
+
+          <p>
+            {{ labelsService.profileData[2] }}
+          </p>
+        </header>
+
+        <h3>
+          {{ labelsService.profileNumbers[1] }}
+        </h3>
+      </div>
+
+      <div class="profileSection--body__data--section">
+        <header>
+          <img src="../../../assets/icons/orange-dot.svg" alt="" />
+
+          <p>
+            {{ labelsService.profileData[3] }}
+          </p>
+        </header>
+
+        <h3>
+          {{ labelsService.profileNumbers[2] }}
+        </h3>
+      </div>
+    </div>
+
+    <div class="profileSection--body__main">
+      <img
+        class="outLineDot"
+        src="../../../assets/icons/green-dot.svg"
+        alt=""
+      />
+
+      <img
+        class="midLineDot"
+        src="../../../assets/icons/violet-dot.svg"
+        alt=""
+      />
+
+      <img
+        class="innerLineDot"
+        src="../../../assets/icons/orange-dot.svg"
+        alt=""
+      />
+
+      <img class="employee" [src]="labelsService.profileImage" alt="employee" />
+    </div>
+  </div>
+</section>

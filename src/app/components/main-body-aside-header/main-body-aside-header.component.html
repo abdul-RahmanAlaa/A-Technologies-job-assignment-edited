@@ -1,0 +1,49 @@
+<section class="calendar">
+  <header class="calendar__header" [ngClass]="isArabic ? 'rtl' : 'ltr'">
+    <div>
+      <h3>{{ labelsService.calendarLabels[0] }}</h3>
+      <img src="../../../assets/icons/icon (1).svg" alt="" />
+      <img src="../../../assets/icons/icon.svg" alt="" />
+    </div>
+    <div>
+      <a role="button">
+        <img src="../../../assets/icons/calendar-2.svg" alt="" />
+        <span>
+          {{ labelsService.calendarLabels[1] }}
+        </span>
+        <img src="../../../assets/icons/arrow-down.svg" alt="" />
+      </a>
+    </div>
+  </header>
+  <div>
+    <ul>
+      <li
+        *ngFor="let data of labelsService.dates; let index = index"
+        (click)="pickedToggle(index)"
+      >
+        <p *ngIf="isArabic">{{ data.day[0] }}</p>
+        <p *ngIf="!isArabic">{{ data.day[1] }}</p>
+        <div [ngClass]="isPicked ? '' : 'picked'" class="date">
+          <p class="number">{{ data.number }}</p>
+        </div>
+        <div>
+          <img
+            *ngIf="data.tasks[0]"
+            src="../../../assets/icons/green-dot.svg"
+            alt=""
+          />
+          <img
+            *ngIf="data.tasks[1]"
+            src="../../../assets/icons/orange-dot.svg"
+            alt=""
+          />
+          <img
+            *ngIf="data.tasks[2]"
+            src="../../../assets/icons/violet-dot.svg"
+            alt=""
+          />
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>

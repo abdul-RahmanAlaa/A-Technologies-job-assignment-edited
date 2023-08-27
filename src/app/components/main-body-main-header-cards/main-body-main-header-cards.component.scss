@@ -1,0 +1,60 @@
+.bodyCards {
+  margin-inline: 0.66rem 0.9rem;
+  min-width: 12.2rem;
+
+  &--card {
+    position: relative;
+    margin-block: 1rem 0;
+    padding-inline-start: 0.7rem;
+    padding-block: 0.9rem 0.77rem;
+    border-radius: 1rem;
+
+    &.bgOrange {
+      background-color: var(--orange);
+    }
+
+    &.bgViolet {
+      background-color: var(--violet);
+    }
+
+    &.bgGreen {
+      background-color: var(--green);
+    }
+
+    &__header {
+      & > h3 {
+        margin: 0;
+        color: var(--white);
+        font-size: var(--fs-m);
+      }
+    }
+
+    &__body {
+      display: flex;
+      align-items: center;
+      margin-block: 0.25rem;
+
+      & > h3 {
+        margin: 0;
+        color: var(--white);
+        font-size: var(--fs-3xl);
+      }
+
+      & > img {
+        margin-inline-start: 0.14rem;
+      }
+    }
+
+    & > .decoration {
+      position: absolute;
+      height: 4.375rem;
+      top: 0;
+      right: 3.5rem;
+    }
+
+    & > .decoration.reverse {
+      transform: scaleX(-1);
+      left: 3.5rem;
+    }
+  }
+}

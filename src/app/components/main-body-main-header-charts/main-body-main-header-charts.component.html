@@ -1,0 +1,51 @@
+<section class="statistics">
+  <header class="statistics--header">
+    <h3>
+      {{ labelsService.chartData[0] }}
+    </h3>
+  </header>
+
+  <section class="statistics--body">
+    <div class="statistics--body__chart1">
+      <mat-progress-spinner
+        [diameter]="135"
+        [value]="labelsService.chartNumbers[0]"
+      ></mat-progress-spinner>
+    </div>
+    <div class="statistics--body__data">
+      <p class="number">
+        {{ labelsService.chartNumbers[2] }}
+      </p>
+      <p class="text">
+        {{ labelsService.chartData[1] }}
+      </p>
+    </div>
+    <div class="statistics--body__chart2">
+      <mat-progress-spinner
+        [diameter]="90"
+        [value]="labelsService.chartNumbers[1]"
+      ></mat-progress-spinner>
+    </div>
+  </section>
+
+  <footer class="statistics--footer">
+    <img src="../../../assets/icons/Line-blue.svg" alt="" />
+    <div class="statistics--footer__data1">
+      <h3>
+        {{ labelsService.chartNumbers[3] }}
+      </h3>
+      <p>
+        {{ labelsService.chartData[2] }}
+      </p>
+    </div>
+    <img src="../../../assets/icons/Line-orange.svg" alt="" />
+    <div class="statistics--footer__data2">
+      <h3>
+        {{ labelsService.chartNumbers[4] }}
+      </h3>
+      <p>
+        {{ labelsService.chartData[3] }}
+      </p>
+    </div>
+  </footer>
+</section>

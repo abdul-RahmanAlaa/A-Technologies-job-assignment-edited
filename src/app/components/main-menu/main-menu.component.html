@@ -1,0 +1,118 @@
+<section class="mainMenu">
+  <figure class="mainMenu__logo">
+    <figcaption class="visually-hidden">the logo of the website</figcaption>
+    <img src="../../../assets/icons/logo.svg" alt="logo" />
+  </figure>
+
+  <figure
+    class="mainMenu__switch"
+    role="button"
+    [ngClass]="{ imgReverse: isArabic }"
+    (click)="toggleLanguage()"
+  >
+    <img src="../../../assets/icons/diriction-circle.svg" alt="language" />
+    <figcaption [ngClass]="{ imgReverse: !isArabic }" class="visually-hidden">
+      the change language button
+    </figcaption>
+  </figure>
+  <a
+    role="button"
+    class="menuButton"
+    (click)="toggleIsOpened()"
+    [ngClass]="{ reverse: isArabic }"
+  >
+    {{ labelsService.main[2] }}
+    <img
+      [ngClass]="{ active: isOpened }"
+      class="arrow"
+      src="../../../assets/icons/arrow down.svg"
+      alt="arrow"
+    />
+  </a>
+
+  <!-- end of the logo section -->
+  <div class="container" [ngClass]="{ open: isOpened }">
+    <p class="mainMenu__header" [ngClass]="isArabic ? 'ar' : 'en reverse'">
+      {{ labelsService.main[0] }}
+    </p>
+
+    <div
+      class="mainMenu__list"
+      *ngFor="let item of labelsService.mainOptions; let index = index"
+    >
+      <div
+        class="mainMenu__list--btn"
+        role="button"
+        [ngClass]="{ active: isVisible[index], enBorder: !isArabic }"
+        (click)="accordionToggle(index)"
+      >
+        <picture>
+          <img src="../../../assets/icons/home.svg" alt="" />
+        </picture>
+
+        <p>
+          {{ item }}
+        </p>
+
+        <img
+          class="arrow"
+          src="../../../assets/icons/arrow down.svg"
+          alt="arrow"
+        />
+      </div>
+      <ul
+        class="mainMenu__list--child"
+        [ngClass]="{
+          hide: !isVisible[index],
+          en: !isArabic,
+          reverse: !isArabic
+        }"
+      >
+        <div>
+          <div
+            *ngFor="
+              let option of labelsService.secondaryOption;
+              let index = index
+            "
+          >
+            <li>{{ option }}</li>
+          </div>
+        </div>
+      </ul>
+    </div>
+
+    <p class="mainMenu__header">{{ labelsService.main[1] }}</p>
+
+    <div class="mainMenu__list">
+      <div class="mainMenu__list--btn notVis">
+        <img
+          class="bg-yellow"
+          src="../../../assets/icons/info-circle.svg"
+          alt="{{ labelsService.accountOptions[0] }}"
+        />
+        <p>{{ labelsService.accountOptions[0] }}</p>
+
+        <img
+          class="arrow"
+          src="../../../assets/icons/arrow-down.svg"
+          alt="arrow"
+        />
+      </div>
+
+      <div class="mainMenu__list--btn notVis">
+        <img
+          class="bg-yellow"
+          src="../../../assets/icons/setting-1.svg"
+          alt="{{ labelsService.accountOptions[1] }}"
+        />
+        <p>{{ labelsService.accountOptions[1] }}</p>
+
+        <img
+          class="arrow"
+          src="../../../assets/icons/arrow-down.svg"
+          alt="arrow"
+        />
+      </div>
+    </div>
+  </div>
+</section>
