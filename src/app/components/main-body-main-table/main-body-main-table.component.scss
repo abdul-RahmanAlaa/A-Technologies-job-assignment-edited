@@ -104,6 +104,7 @@
                   & > input {
                     margin-inline: 0 1rem;
                   }
+
                   & > input:checked ~ label {
                     //well back to hide the col litter
                   }
@@ -121,6 +122,8 @@
 
     &__body {
       &--row {
+        position: relative;
+
         &__cell {
           border-block: 1px solid var(--border2);
           padding: 0.94rem 1.44rem 0.75rem 1.44rem;
@@ -131,7 +134,6 @@
           max-width: 6rem;
 
           white-space: nowrap;
-          overflow: hidden;
           text-overflow: ellipsis;
 
           &:first-child {
@@ -150,6 +152,32 @@
 
           &.name {
             width: 17%;
+
+            &:hover {
+              & > .tooltip {
+                transition: 500 ease-in-out;
+                visibility: visible;
+              }
+            }
+
+            & > .tooltip {
+              visibility: hidden;
+
+              position: absolute;
+              z-index: 99;
+
+              // background-color: var(--bg-3);
+              color: var(--white);
+              text-align: center;
+              font-size: var(--fs-s);
+
+              bottom: 2rem;
+
+              padding: 0.42rem 1rem 0.85rem 0.52rem;
+
+              background-image: url("../../../assets/icons/Stat\ Container.svg");
+              background-size: cover;
+            }
           }
 
           &.email {
@@ -160,9 +188,10 @@
             padding: 0;
             width: 1.75rem;
 
-            // & > .file__image {
-            //   margin: 0 !important;
-            // }
+            & > p {
+              font-size: var(--fs-4xs);
+              color: var(--tc-size);
+            }
 
             & > div > .file__icon {
               display: inline-flex;

@@ -1,6 +1,6 @@
 .topSection {
   display: flex;
-  // overflow: hidden;
+  overflow: hidden;
   @media (max-width: 600px) {
     flex-direction: column;
     justify-content: center;

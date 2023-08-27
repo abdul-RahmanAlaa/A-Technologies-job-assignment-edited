@@ -20,7 +20,10 @@ interface ICard {
 export class MainBodyAsideBodyComponent {
   cards: ICard[] = [];
 
-  constructor(public labelsService: LabelsService) {
+  constructor(
+    public labelsService: LabelsService,
+    private localizationService: LocalizationService
+  ) {
     this.cards = [
       {
         subject: 'هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى ',
@@ -87,6 +90,10 @@ export class MainBodyAsideBodyComponent {
         img: '../../../assets/imgs/profile (4).png',
       },
     ];
+  }
+
+  get isArabic(): boolean {
+    return this.localizationService.isArabic;
   }
 
   drop(event: CdkDragDrop<string[]>) {

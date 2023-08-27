@@ -126,6 +126,16 @@
         left: 2.5rem;
       }
 
+      & > span {
+        position: absolute;
+
+        font-size: var(--fs-s);
+
+
+        top: 7rem;
+        left: 3.25rem;
+      }
+
       & > .employee {
         position: absolute;
 

@@ -81,6 +81,11 @@
     justify-content: center;
     margin-block-start: 1.34rem;
     padding-block-end: 0.75rem;
+    // gap: 1rem;
+
+    & .space {
+      width: 3.5rem;
+    }
 
     &__data1,
     &__data2 {
@@ -95,7 +100,7 @@
       }
 
       & > p {
-        margin: -0.25rem 0 0 0;
+        margin: 0.25rem 0 0 0;
         color: var(--tc-chartT1);
         font-size: var(--fs-l);
         font-weight: var(--fw-s);

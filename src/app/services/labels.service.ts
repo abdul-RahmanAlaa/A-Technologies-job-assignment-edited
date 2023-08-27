@@ -217,7 +217,7 @@ export class LabelsService {
     },
     {
       id: 'ID-15880',
-      name: 'إسم إفتراضي جديد',
+      name: 'إسم إفتراضي جديد مثال',
       email: 'Example@company.com',
       workDays: [true, true, false, true, true, true, false],
       files: ['واجهة المستخدم .png', '../../../assets/imgs/file (3).png', 9],

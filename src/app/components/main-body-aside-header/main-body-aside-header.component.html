@@ -2,10 +2,16 @@
   <header class="calendar__header" [ngClass]="isArabic ? 'rtl' : 'ltr'">
     <div>
       <h3>{{ labelsService.calendarLabels[0] }}</h3>
-      <img *ngIf="isArabic" src="../../../assets/icons/icon.svg" alt="" />
-      <img *ngIf="isArabic" src="../../../assets/icons/icon (1).svg" alt="" />
-      <img *ngIf="!isArabic" src="../../../assets/icons/icon (1).svg" alt="" />
-      <img *ngIf="!isArabic" src="../../../assets/icons/icon.svg" alt="" />
+      <img
+        [ngClass]="{ imgReverse: !isArabic }"
+        src="../../../assets/icons/icon.svg"
+        alt=""
+      />
+      <img
+        [ngClass]="{ imgReverse: !isArabic }"
+        src="../../../assets/icons/icon (1).svg"
+        alt=""
+      />
     </div>
     <div>
       <a role="button">

@@ -1,9 +1,10 @@
 .searchBar {
   margin-block: -0.25rem;
+  padding-block-end: 0.125rem;
+  
   display: flex;
   justify-content: space-between;
   align-items: center;
-  min-height: 5vh;
 
   &__inputSection {
     display: flex;

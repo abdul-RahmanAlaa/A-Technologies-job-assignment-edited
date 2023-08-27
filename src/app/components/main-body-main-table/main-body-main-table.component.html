@@ -74,10 +74,13 @@
         <td class="table__body--row__cell id">
           {{ employee.id }}
         </td>
-        <td class="table__body--row__cell name" [title]="employee.name">
+        <td class="table__body--row__cell name">
+          <span class="tooltip" *ngIf="employee.name.length > 20">
+            {{ employee.name }}
+          </span>
           {{ employee.name }}
         </td>
-        <td class="table__body--row__cell email" [title]="employee.email">
+        <td class="table__body--row__cell email">
           {{ employee.email }}
         </td>
         <td class="table__body--row__cell list">

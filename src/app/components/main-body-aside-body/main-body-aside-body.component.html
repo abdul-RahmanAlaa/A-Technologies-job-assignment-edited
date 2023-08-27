@@ -58,7 +58,11 @@
         </span>
       </div>
       <a role="button">
-        <img src="../../../assets/icons/Arrow - Left.svg" alt="" />
+        <img
+          [ngClass]="{ imgReverse: isArabic }"
+          src="../../../assets/icons/Arrow - Left.svg"
+          alt=""
+        />
       </a>
     </section>
   </div>

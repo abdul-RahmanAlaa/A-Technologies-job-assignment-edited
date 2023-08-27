@@ -49,6 +49,8 @@
   --tc-chartT1: #b6baca;
   --tc-chartT2: #6b7181;
 
+  --tc-size: rgba(0, 0, 0, 0.4);
+
   --tc-footer: #333;
 
   //font
@@ -119,4 +121,5 @@ body {
 .imgReverse {
   transform: scaleX(-1);
 }
+
 // end of the UTILITY classes
