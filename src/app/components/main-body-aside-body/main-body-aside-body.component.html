@@ -1,10 +1,10 @@
 <section class="comments" cdkDropList (cdkDropListDropped)="drop($event)">
   <div
     class="comments__card"
-    cdkDrag
-    cdkDragLockAxis="y"
     *ngFor="let card of cards"
-  >
+    >
+    <!-- cdkDrag
+    cdkDragLockAxis="y" -->
     <header class="comments__card--header">
       <h3 class="comments__card--header__subject">
         {{ card.subject }}

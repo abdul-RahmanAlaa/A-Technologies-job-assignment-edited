@@ -1,7 +1,5 @@
 .mainBodyHeader {
   background-color: var(--bg-2);
   height: 3.75rem;
-  width: 100vw;
-  flex-grow: 1;
-  overflow: hidden;
+  margin-inline-start: -1rem;
 }

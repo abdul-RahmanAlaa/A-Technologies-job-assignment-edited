@@ -15,7 +15,7 @@
       the change language button
     </figcaption>
   </figure>
-  <a
+  <!-- <a
     role="button"
     class="menuButton"
     (click)="toggleIsOpened()"
@@ -28,11 +28,11 @@
       src="../../../assets/icons/arrow down.svg"
       alt="arrow"
     />
-  </a>
+  </a> -->
 
   <!-- end of the logo section -->
   <div class="container" [ngClass]="{ open: isOpened }">
-    <p class="mainMenu__header" [ngClass]="isArabic ? 'ar' : 'en reverse'">
+    <p class="mainMenu__header top" [ngClass]="isArabic ? 'ar' : 'en reverse'">
       {{ labelsService.main[0] }}
     </p>
 
@@ -46,19 +46,21 @@
         [ngClass]="{ active: isVisible[index], enBorder: !isArabic }"
         (click)="accordionToggle(index)"
       >
-        <picture>
+        <div class="picture">
           <img src="../../../assets/icons/home.svg" alt="" />
-        </picture>
+        </div>
 
-        <p>
-          {{ item }}
-        </p>
+        <div>
+          <p>
+            {{ item }}
+          </p>
 
-        <img
-          class="arrow"
-          src="../../../assets/icons/arrow down.svg"
-          alt="arrow"
-        />
+          <img
+            class="arrow"
+            src="../../../assets/icons/arrow down.svg"
+            alt="arrow"
+          />
+        </div>
       </div>
       <ul
         class="mainMenu__list--child"
@@ -68,16 +70,16 @@
           reverse: !isArabic
         }"
       >
-        <div>
-          <div
-            *ngFor="
-              let option of labelsService.secondaryOption;
-              let index = index
-            "
-          >
-            <li>{{ option }}</li>
-          </div>
-        </div>
+        <li
+          *ngFor="
+            let option of labelsService.secondaryOption;
+            let index = index
+          "
+        >
+          <span>
+            {{ option }}
+          </span>
+        </li>
       </ul>
     </div>
 
@@ -90,13 +92,15 @@
           src="../../../assets/icons/info-circle.svg"
           alt="{{ labelsService.accountOptions[0] }}"
         />
-        <p>{{ labelsService.accountOptions[0] }}</p>
+        <div>
+          <p>{{ labelsService.accountOptions[0] }}</p>
 
-        <img
-          class="arrow"
-          src="../../../assets/icons/arrow-down.svg"
-          alt="arrow"
-        />
+          <img
+            class="arrow"
+            src="../../../assets/icons/arrow-down.svg"
+            alt="arrow"
+          />
+        </div>
       </div>
 
       <div class="mainMenu__list--btn notVis">
@@ -105,13 +109,15 @@
           src="../../../assets/icons/setting-1.svg"
           alt="{{ labelsService.accountOptions[1] }}"
         />
-        <p>{{ labelsService.accountOptions[1] }}</p>
+        <div>
+          <p>{{ labelsService.accountOptions[1] }}</p>
 
-        <img
-          class="arrow"
-          src="../../../assets/icons/arrow-down.svg"
-          alt="arrow"
-        />
+          <img
+            class="arrow"
+            src="../../../assets/icons/arrow-down.svg"
+            alt="arrow"
+          />
+        </div>
       </div>
     </div>
   </div>

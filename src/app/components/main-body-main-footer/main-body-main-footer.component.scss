@@ -1,7 +1,7 @@
 .table__footer {
   display: flex;
   justify-content: space-between;
-  // padding-block: 0.81rem 0.76rem;
+  padding-block: 0.81rem 0.76rem;
 
   &--start {
     font-size: var(--fs-xs);
@@ -52,6 +52,7 @@
       }
 
       & > input:checked ~ label {
+        padding-block: 0.25rem;
         background-color: var(--checkbox-blue);
         color: var(--white);
       }

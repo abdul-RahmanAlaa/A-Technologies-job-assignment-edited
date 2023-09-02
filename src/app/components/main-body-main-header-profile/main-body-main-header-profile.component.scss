@@ -1,20 +1,18 @@
 .profileSection {
-  min-width: 17.4rem;
+  min-width: 19.333vw;
 
   background-color: var(--bg-2);
 
   border: 1px var(--bg-secondary) solid;
   border-radius: 0.47rem;
 
-  margin-block: 1rem 0.565rem;
-  margin-inline-start: 0.7rem;
+  margin-inline-start: 1vw;
 
-  padding-inline: 1.22rem 0.75rem;
-  // padding-block-end: 1rem;
+  // padding-inline: 1.3vw 0.833vw;
 
   &--header {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 
     padding-block-start: 1.67rem;
 
@@ -24,6 +22,7 @@
       font-weight: var(--fw-l);
     }
     &__date {
+      margin-inline-start: 7.044vw;
       color: var(--tc-date);
       font-size: var(--fs-3xs);
     }
@@ -31,7 +30,7 @@
 
   &--body {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
 
     &__data {
       // padding-block-end: 1.28rem;
@@ -64,9 +63,12 @@
     }
 
     &__main {
+      overflow: hidden;
+
       position: relative;
-      margin-top: 1.54rem;
-      margin-inline-end: 1rem;
+
+      margin-block: 1.54rem;
+      margin-inline: 1rem;
 
       width: 10.25rem;
       height: 10.25rem;
@@ -85,6 +87,8 @@
 
         top: 1.25rem;
         left: 1rem;
+
+        z-index: 1;
       }
 
       &::after {
@@ -98,6 +102,7 @@
 
         top: 2.5rem;
         left: 2.5rem;
+        z-index: 1;
       }
       & > .outLineDot {
         position: absolute;
@@ -130,7 +135,6 @@
         position: absolute;
 
         font-size: var(--fs-s);
-
 
         top: 7rem;
         left: 3.25rem;

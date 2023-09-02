@@ -5,12 +5,12 @@
       <img
         [ngClass]="{ imgReverse: !isArabic }"
         src="../../../assets/icons/icon.svg"
-        alt=""
+        (click)="previous()"
       />
       <img
         [ngClass]="{ imgReverse: !isArabic }"
         src="../../../assets/icons/icon (1).svg"
-        alt=""
+        (click)="next()"
       />
     </div>
     <div>
@@ -26,7 +26,10 @@
   <div>
     <ul>
       <li
-        *ngFor="let data of labelsService.dates; let index = index"
+        *ngFor="
+          let data of labelsService.dates.slice(start, end);
+          let index = index
+        "
         (click)="pickedToggle(index)"
         [class]="'p-' + index"
       >

@@ -1,10 +1,10 @@
 .bodyCards {
   margin-inline: 0.66rem 0.9rem;
-  min-width: 12.2rem;
+  min-width: 13.556vw;
+  min-height: 5.211vw;
 
   &--card {
     position: relative;
-    margin-block: 1.2rem 0;
     padding-inline-start: 0.7rem;
     padding-block: 0.9rem 0.77rem;
     border-radius: 1rem;
@@ -15,6 +15,7 @@
 
     &.bgViolet {
       background-color: var(--violet);
+      margin-block: 1rem;
     }
 
     &.bgGreen {
@@ -32,10 +33,10 @@
     &__body {
       display: flex;
       align-items: center;
-      margin-block: 0.25rem;
+      margin-block: 0.4rem;
 
       & > h3 {
-        margin: 0;
+        margin-block-start: 0;
         color: var(--white);
         font-size: var(--fs-3xl);
       }
@@ -47,14 +48,15 @@
 
     & > .decoration {
       position: absolute;
-      height: 4.375rem;
-      top: 0;
-      right: 3.5rem;
+      height: 4.7rem;
+      top: 0rem;
+      left: 0;
     }
 
     & > .decoration.reverse {
       transform: scaleX(-1);
-      left: 3.5rem;
+      left: auto;
+      right: 0;
     }
   }
 }

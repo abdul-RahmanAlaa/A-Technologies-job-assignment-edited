@@ -40,6 +40,8 @@
             justify-content: end;
             align-items: center;
             padding-block-end: 0.9rem;
+            border-radius: 2.98rem;
+            box-shadow: 0px 10.73494px 23.85542px 0px rgba(112, 144, 176, 0.12);
 
             & > svg {
               border-radius: 5px;
@@ -64,13 +66,14 @@
               flex-direction: column;
               align-items: flex-start;
               background-color: var(--bg-2);
+              z-index: 50;
 
               position: absolute;
-              top: 1.125rem;
+              top: 1rem;
               left: 0rem;
 
               &.optionsEn {
-                left: -13.5rem;
+                left: -7.5rem;
               }
 
               &.visible {
@@ -92,6 +95,7 @@
 
                   & > img {
                     margin-inline-start: 0.5rem;
+                    width: 0.625rem;
                   }
                   & > label {
                     text-align: start;
@@ -182,6 +186,10 @@
 
           &.email {
             width: 20%;
+          }
+
+          &>.file__image{
+            padding: 0;
           }
 
           &.fileData {

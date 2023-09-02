@@ -10,6 +10,9 @@ import { LocalizationService } from 'src/app/services/localization.service';
 export class MainBodyAsideHeaderComponent {
   isPicked: boolean[] = [true];
 
+  start: number = 7;
+  end: number = 14;
+
   pickedToggle(index: number): void {
     this.isPicked[index] = !this.isPicked[index];
     console.log(index);
@@ -23,5 +26,17 @@ export class MainBodyAsideHeaderComponent {
 
   get isArabic(): boolean {
     return this.localizationService.isArabic;
+  }
+
+  next() {
+    this.start = this.start + 7;
+    this.end = this.end + 7;
+    console.log(this.start, this.end);
+  }
+
+  previous() {
+    this.start = this.start - 7;
+    this.end = this.end - 7;
+    console.log(this.start, this.end);
   }
 }

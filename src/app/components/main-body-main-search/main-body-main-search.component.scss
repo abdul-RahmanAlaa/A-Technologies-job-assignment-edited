@@ -1,7 +1,6 @@
 .searchBar {
-  margin-block: -0.25rem;
-  padding-block-end: 0.125rem;
-  
+  padding-block: 1rem;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -20,7 +19,7 @@
       border-radius: 5px;
       outline: none;
 
-      &::placeholder{
+      &::placeholder {
         color: var(--tc-placeholder);
       }
 
@@ -53,7 +52,7 @@
       }
 
       &:active {
-        background-color: var(--accent);
+        background-color: var(--checkbox-blue);
       }
     }
   }

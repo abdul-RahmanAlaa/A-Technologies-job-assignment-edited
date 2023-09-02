@@ -6,11 +6,10 @@
   border: 1px var(--bg-secondary) solid;
   border-radius: 0.47rem;
 
-  margin-block: 1rem 0.565rem;
   margin-inline-start: 0.66rem;
 
   padding-inline: 0.81rem 0;
-  padding-block: 1.5rem 1rem;
+  padding-block: 1.41rem 0;
 
   min-width: 17.4rem;
 
@@ -25,16 +24,16 @@
   }
 
   &--body {
+    height: 9.1rem;
     position: relative;
-    height: 8.5rem;
 
     & > div {
       position: absolute;
     }
 
     &__chart1 {
-      top: 0;
-      right: 5rem;
+      top: 1rem;
+      right: 3.5vw;
 
       & > .mat-mdc-progress-spinner {
         --mdc-circular-progress-active-indicator-color: var(--checkbox-blue);
@@ -42,8 +41,10 @@
     }
 
     &__chart2 {
-      top: 1.5rem;
-      left: 4.5rem;
+      top: 2.5rem;
+      right: 5vw;
+
+      transform: rotate(90deg);
 
       & > .mat-mdc-progress-spinner {
         --mdc-circular-progress-active-indicator-color: var(--chart-2);
@@ -51,8 +52,9 @@
     }
 
     &__data {
-      top: 3rem;
-      left: 5.5rem;
+      top: 4.5rem;
+      right: 7vw;
+      // left: 8.889vw;
 
       display: flex;
       flex-direction: column;

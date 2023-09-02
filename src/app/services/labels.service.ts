@@ -112,6 +112,41 @@ export class LabelsService {
   dates: DateObject[] = [
     {
       day: ['السبت', 'Saturday'],
+      number: 17,
+      tasks: [false, true, false],
+    },
+    {
+      day: ['الأحد ', 'Sunday'],
+      number: 18,
+      tasks: [false, false, false],
+    },
+    {
+      day: ['الإثنين ', 'Monday'],
+      number: 19,
+      tasks: [false, false, false],
+    },
+    {
+      day: ['الثلاثاء ', 'Tuesday'],
+      number: 20,
+      tasks: [true, true, false],
+    },
+    {
+      day: ['الأربعاء ', 'Wednesday'],
+      number: 21,
+      tasks: [true, true, true],
+    },
+    {
+      day: ['الخميس ', 'Thursday'],
+      number: 22,
+      tasks: [false, false, false],
+    },
+    {
+      day: ['الجمعة ', 'Friday'],
+      number: 23,
+      tasks: [false, false, true],
+    },
+    {
+      day: ['السبت', 'Saturday'],
       number: 24,
       tasks: [false, true, false],
     },
@@ -143,6 +178,41 @@ export class LabelsService {
     {
       day: ['الجمعة ', 'Friday'],
       number: 30,
+      tasks: [false, false, true],
+    },
+    {
+      day: ['السبت', 'Saturday'],
+      number: 31,
+      tasks: [false, true, false],
+    },
+    {
+      day: ['الأحد ', 'Sunday'],
+      number: 1,
+      tasks: [false, false, false],
+    },
+    {
+      day: ['الإثنين ', 'Monday'],
+      number: 2,
+      tasks: [false, false, false],
+    },
+    {
+      day: ['الثلاثاء ', 'Tuesday'],
+      number: 3,
+      tasks: [true, true, false],
+    },
+    {
+      day: ['الأربعاء ', 'Wednesday'],
+      number: 4,
+      tasks: [true, true, true],
+    },
+    {
+      day: ['الخميس ', 'Thursday'],
+      number: 5,
+      tasks: [false, false, false],
+    },
+    {
+      day: ['الجمعة ', 'Friday'],
+      number: 6,
       tasks: [false, false, true],
     },
   ];
@@ -272,7 +342,7 @@ export class LabelsService {
 
   profileNumbers: Array<number> = [254, 120, 25];
 
-  chartNumbers: Array<number> = [50, 30, 158, 108, 50];
+  chartNumbers: Array<number> = [50, 35, 158, 108, 50];
 
   cardNumbers: Array<number> = [35, 256, 18];
 
