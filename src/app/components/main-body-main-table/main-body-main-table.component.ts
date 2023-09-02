@@ -11,6 +11,9 @@ import { LocalizationService } from 'src/app/services/localization.service';
 export class MainBodyMainTableComponent {
   options: boolean = false;
 
+  start: number = 0;
+  end: number = 8;
+
   constructor(
     private localizationService: LocalizationService,
     public labelsService: LabelsService
@@ -21,7 +24,11 @@ export class MainBodyMainTableComponent {
   }
 
   drop(event: CdkDragDrop<string[]>) {
-    moveItemInArray(this.labelsService.employees, event.previousIndex, event.currentIndex);
+    moveItemInArray(
+      this.labelsService.employees,
+      event.previousIndex,
+      event.currentIndex
+    );
   }
 
   toggleSettings(): void {

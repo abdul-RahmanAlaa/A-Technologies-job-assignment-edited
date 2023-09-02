@@ -5,10 +5,16 @@
         <th
           class="table__header--row__cell"
           [class]="'col-' + index"
-          *ngFor="let column of labelsService.headerColumns; let index = index"
+          *ngFor="
+            let column of labelsService.headerColumns.slice(0, 4);
+            let index = index
+          "
         >
           {{ column }}
           <img class="sort" src="../../../assets/icons/arrow-swap.svg" alt="" />
+        </th>
+        <th colspan="2" class="table__header--row__cell">
+          {{ labelsService.headerColumns[4] }}
         </th>
         <th class="table__header--row__cell settings">
           <svg
@@ -59,7 +65,7 @@
             </ul>
           </div>
         </th>
-        <th class="table__header--row__cell"></th>
+        <!-- <th class="table__header--row__cell"></th> -->
         <!-- the end of the settings menu -->
       </tr>
     </thead>
@@ -69,7 +75,7 @@
         class="table__body--row"
         cdkDrag
         cdkDragLockAxis="y"
-        *ngFor="let employee of labelsService.employees"
+        *ngFor="let employee of labelsService.employees.slice(start, end)"
       >
         <td class="table__body--row__cell id">
           {{ employee.id }}
@@ -106,15 +112,14 @@
         <td class="table__body--row__cell fileData" [title]="employee.files[0]">
           <div>
             <span>{{ employee.files[0] }}</span>
-            <img
-              class="file__icon"
-              src="../../../assets/icons/clipboardtext.svg"
-              alt=""
-            />
           </div>
           <p>{{ employee.files[2] }}mb</p>
         </td>
         <td class="table__body--row__cell dragHandle" cdkDragHandle>
+          <img
+            class="file__icon"
+            src="../../../assets/icons/clipboardtext.svg"
+          />
           <img src="../../../assets/icons/Group 1000011388.svg" alt="" />
         </td>
       </tr>

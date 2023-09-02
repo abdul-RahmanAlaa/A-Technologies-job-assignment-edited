@@ -59,7 +59,7 @@
 
 .mainMenu {
   // display: none;
-  
+
   @media (max-width: 1000px) {
     position: absolute;
   }
@@ -102,10 +102,9 @@
     color: var(--tc-disabled);
     margin-inline: 1.27rem;
     margin-block: 1.23rem 1.27rem;
-    
-    &.top{
+
+    &.top {
       margin-block-start: 5rem;
-      
     }
 
     font-size: var(--fs-l);
@@ -147,7 +146,9 @@
       }
 
       &.active > .picture {
-        border-radius: 2.81rem 0 0 2.81rem;
+        border-end-end-radius: 2.81rem;
+        border-start-end-radius: 2.81rem;
+
         background-color: var(--yellow);
       }
       &.active.enBorder > picture {

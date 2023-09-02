@@ -45,7 +45,7 @@
 
             & > svg {
               border-radius: 5px;
-              margin-inline-end: -2rem;
+              margin-inline-end: 0.5rem;
 
               & > g > g > path {
                 fill: var(--tc-table-header);
@@ -146,7 +146,16 @@
 
           &.dragHandle {
             cursor: pointer;
-            padding-inline-start: 1rem;
+            display: flex;
+            justify-content: space-between;
+
+            & > .file__icon {
+              visibility: hidden;
+            }
+
+            &:hover > .file__icon {
+              visibility: visible;
+            }
           }
 
           &.list {
@@ -188,8 +197,13 @@
             width: 20%;
           }
 
-          &>.file__image{
+          &.file {
             padding: 0;
+            margin: 0;
+
+            & > .file__image {
+              // width: 80%;
+            }
           }
 
           &.fileData {
@@ -199,18 +213,6 @@
             & > p {
               font-size: var(--fs-4xs);
               color: var(--tc-size);
-            }
-
-            & > div > .file__icon {
-              display: inline-flex;
-              margin-inline-start: 1rem;
-              cursor: pointer;
-              display: inline;
-
-              visibility: hidden;
-            }
-            &:hover > div > .file__icon {
-              visibility: visible;
             }
           }
 
@@ -231,6 +233,7 @@
                 text-align: center;
                 border-radius: 5px;
                 cursor: pointer;
+                padding-block-start: 0.25rem;
               }
 
               & > input:checked ~ label {
