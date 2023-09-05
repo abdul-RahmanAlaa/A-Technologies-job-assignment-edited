@@ -33,32 +33,36 @@
         (click)="pickedToggle(index)"
         [class]="'p-' + index"
       >
-        <p *ngIf="isArabic">{{ data.day[0] }}</p>
-        <p *ngIf="!isArabic">{{ data.day[1] }}</p>
-        <div
-          class="date"
-          [ngClass]="isPicked ? '' : 'picked'"
-          [class]="'day-' + index"
-        >
-          <p class="number">{{ data.number }}</p>
-        </div>
-        <div>
-          <img
-            *ngIf="data.tasks[0]"
-            src="../../../assets/icons/green-dot.svg"
-            alt=""
-          />
-          <img
-            *ngIf="data.tasks[1]"
-            src="../../../assets/icons/orange-dot.svg"
-            alt=""
-          />
-          <img
-            *ngIf="data.tasks[2]"
-            src="../../../assets/icons/violet-dot.svg"
-            alt=""
-          />
-        </div>
+        <input
+          type="radio"
+          [id]="data.number + index"
+          name="dates"
+          [value]="data.number + index"
+          [checked]="index === 1"
+        />
+        <label [for]="data.number + index">
+          <p *ngIf="isArabic">{{ data.day[0] }}</p>
+          <p *ngIf="!isArabic">{{ data.day[1] }}</p>
+          <p class="number" *ngIf="data.number < 10">0{{ data.number }}</p>
+          <p class="number" *ngIf="data.number >= 10">{{ data.number }}</p>
+          <div>
+            <img
+              *ngIf="data.tasks[0]"
+              src="../../../assets/icons/green-dot.svg"
+              alt=""
+            />
+            <img
+              *ngIf="data.tasks[1]"
+              src="../../../assets/icons/orange-dot.svg"
+              alt=""
+            />
+            <img
+              *ngIf="data.tasks[2]"
+              src="../../../assets/icons/violet-dot.svg"
+              alt=""
+            />
+          </div>
+        </label>
       </li>
     </ul>
   </div>

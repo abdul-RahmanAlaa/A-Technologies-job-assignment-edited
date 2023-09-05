@@ -13,9 +13,9 @@
 //   }
 // }
 
-// .open {
-//   visibility: visible;
-// }
+.open {
+  visibility: visible;
+}
 
 // .menuButton {
 //   visibility: hidden;
@@ -58,15 +58,15 @@
 // }
 
 .mainMenu {
-  // display: none;
+  height: 100vh;
 
   @media (max-width: 1000px) {
     position: absolute;
+    height: auto;
   }
 
-  // min-height: 100vh;
   min-width: 15rem;
-  margin-inline-end: 0.63rem;
+  // margin-inline-end: 0.63rem;
   background-color: var(--bg-2);
 
   // the logo section

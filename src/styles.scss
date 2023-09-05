@@ -13,6 +13,7 @@
 
   --white: #fff;
   --yellow: #feee00;
+  --black: #000;
   --blue: #2385ea;
   --orange: #ff9a3e;
   --violet: #7661e2;
@@ -93,6 +94,7 @@ html,
 body {
   background-color: var(--bg-1);
   height: 100%;
+  user-select: none;
 }
 
 // the UTILITY classes

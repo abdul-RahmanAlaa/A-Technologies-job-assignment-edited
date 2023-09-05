@@ -8,6 +8,10 @@
 
   margin-inline-start: 0.66rem;
 
+  @media (max-width: 700px) {
+    margin-inline-start: 0;
+  }
+
   padding-inline: 0.81rem 0;
   padding-block: 1.41rem 0;
 
@@ -27,52 +31,124 @@
     height: 9.1rem;
     position: relative;
 
-    & > div {
+    & > div,
+    & > div > div,
+    & > div > div > div {
       position: absolute;
     }
 
-    &__chart1 {
+    &__chart {
+      height: 8.5rem;
+      width: 8.5rem;
+
       top: 1rem;
-      right: 3.5vw;
+      right: 25%;
+
+      @media (min-width: 1440px) {
+        right: 35%;
+      }
+
+      @media (max-width: 700px) {
+        right: 35%;
+      }
+    
+      @media (max-width: 320px) {
+        right: 25%;
+      }
+
+      z-index: 1;
 
       & > .mat-mdc-progress-spinner {
         --mdc-circular-progress-active-indicator-color: var(--checkbox-blue);
       }
-    }
 
-    &__chart2 {
-      top: 2.5rem;
-      right: 5vw;
+      background-color: #e5e5ef;
+      border-radius: 50%;
 
-      transform: rotate(90deg);
+      &::after {
+        content: "";
 
-      & > .mat-mdc-progress-spinner {
-        --mdc-circular-progress-active-indicator-color: var(--chart-2);
+        z-index: 2;
+
+        position: absolute;
+
+        left: 0.7rem;
+        right: 0.7rem;
+        top: 0.7rem;
+        bottom: 0.7rem;
+
+        border-radius: 50%;
+        background-color: white;
+        height: 7rem;
+        width: 7rem;
       }
-    }
 
-    &__data {
-      top: 4.5rem;
-      right: 7vw;
-      // left: 8.889vw;
+      &--c2 {
+        // position: relative;
 
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+        height: 5.75rem;
+        width: 5.75rem;
 
-      & > P {
-        margin: 0;
+        top: 1.5rem;
+        right: 1.25rem;
 
-        &.number {
-          color: var(--bg-3);
-          font-size: var(--fs-xxl);
-          font-weight: var(--fw-l);
+        z-index: 3;
+
+        transform: rotate(90deg);
+
+        & > .mat-mdc-progress-spinner {
+          --mdc-circular-progress-active-indicator-color: var(--chart-2);
         }
 
-        &.text {
-          color: var(--tc-chartT2);
-          font-size: var(--fs-xxl);
-          font-weight: var(--fw-s);
+        background-color: #e5e5ef;
+        border-radius: 50%;
+
+        &::after {
+          content: "";
+
+          z-index: 4;
+
+          position: absolute;
+
+          left: 0.6rem;
+          right: 0.6rem;
+          top: 0.6rem;
+          bottom: 0.6rem;
+
+          border-radius: 50%;
+          background-color: white;
+          height: 4.5rem;
+          width: 4.5rem;
+        }
+
+        &__data {
+          transform: rotate(-90deg);
+
+          top: 1.75rem;
+          right: 1.75rem;
+          // left: 8.889vw;
+
+          z-index: 5;
+
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          & > P {
+            margin: 0;
+
+            &.number {
+              color: var(--bg-3);
+              font-size: var(--fs-xxl);
+              font-weight: var(--fw-l);
+            }
+
+            &.text {
+              color: var(--tc-chartT2);
+              font-size: var(--fs-xxl);
+              font-weight: var(--fw-s);
+            }
+          }
         }
       }
     }
@@ -80,14 +156,9 @@
 
   &--footer {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     margin-block-start: 1.34rem;
     padding-block-end: 0.75rem;
-    // gap: 1rem;
-
-    & .space {
-      width: 3.5rem;
-    }
 
     &__data1,
     &__data2 {

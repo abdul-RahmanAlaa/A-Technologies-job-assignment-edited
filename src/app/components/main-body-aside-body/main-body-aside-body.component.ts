@@ -1,5 +1,5 @@
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
-import { Component } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component } from '@angular/core';
 import { LabelsService } from 'src/app/services/labels.service';
 import { LocalizationService } from 'src/app/services/localization.service';
 
@@ -17,12 +17,21 @@ interface ICard {
   templateUrl: './main-body-aside-body.component.html',
   styleUrls: ['./main-body-aside-body.component.scss'],
 })
-export class MainBodyAsideBodyComponent {
+export class MainBodyAsideBodyComponent implements AfterViewInit {
   cards: ICard[] = [];
+
+  cardColors: string[] = [
+    '#F2F5F1',
+    '#FFF6E3',
+    // '#7661E2',
+    '#F1ECFE',
+    '#F1ECFE',
+  ];
 
   constructor(
     public labelsService: LabelsService,
-    private localizationService: LocalizationService
+    private localizationService: LocalizationService,
+    private cdr: ChangeDetectorRef
   ) {
     this.cards = [
       {
@@ -92,11 +101,16 @@ export class MainBodyAsideBodyComponent {
     ];
   }
 
+  ngAfterViewInit() {
+    this.cdr.detach();
+  }
+
   get isArabic(): boolean {
     return this.localizationService.isArabic;
   }
 
-  drop(event: CdkDragDrop<string[]>) {
-    moveItemInArray(this.cards, event.previousIndex, event.currentIndex);
+  getRandomColor(): string {
+    const randomIndex = Math.floor(Math.random() * this.cardColors.length);
+    return this.cardColors[randomIndex];
   }
 }

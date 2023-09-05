@@ -1,7 +1,11 @@
 .bodyCards {
-  margin-inline: 0.66rem 0.9rem;
   min-width: 13.556vw;
   min-height: 5.211vw;
+  margin-inline-start: 0.66rem;
+  
+  @media (max-width: 700px) {
+    margin-inline-start: 0;
+  }
 
   &--card {
     position: relative;

@@ -9,26 +9,17 @@
   }
 
   &__card {
-    cursor: grab;
+    cursor: default;
     background-color: var(--bg-1);
     margin-block-end: 1rem;
-    padding: 1rem;
-    margin: 1rem;
     border-radius: 10px;
     min-width: 18rem;
     min-height: 5rem;
+    padding: 1rem;
+    margin: 1rem;
 
-    &:active {
-      background-color: var(--violet);
-      color: var(--white);
-    }
-
-    &:active > header > div {
-      color: var(--white);
-
-      & > svg > g > g > path {
-        fill: var(--white);
-      }
+    @media (max-width: 320px) {
+      min-width: 6rem;
     }
 
     &--header {
@@ -82,7 +73,13 @@
         border-radius: 0.7rem;
         cursor: pointer;
 
-        transform: rotate(180deg);
+        &:active {
+          background-color: var(--checkbox-blue);
+
+          & > svg > g > path {
+            stroke: var(--white);
+          }
+        }
       }
     }
   }

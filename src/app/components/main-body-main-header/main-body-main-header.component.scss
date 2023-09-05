@@ -1,16 +1,12 @@
 .topSection {
-  display:grid;
+  display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   margin-block-start: 1rem;
-  
-  @media (max-width: 600px) {
+
+  @media (max-width: 700px) {
     display: flex;
     flex-direction: column;
     justify-content: center;
     width: 100vw;
-
-    & > section {
-      margin-block-start: 1rem;
-    }
   }
 }

@@ -11,7 +11,15 @@ export interface IEmp {
   id: string;
   name: string;
   email: string;
-  workDays: [boolean, boolean, boolean, boolean, boolean, boolean, boolean];
+  attendanceRecords: [
+    boolean,
+    boolean,
+    boolean,
+    boolean,
+    boolean,
+    boolean,
+    boolean
+  ];
   files: [fileName: string, imgPath: string, size: number];
 }
 
@@ -112,78 +120,8 @@ export class LabelsService {
   dates: DateObject[] = [
     {
       day: ['السبت', 'Saturday'],
-      number: 17,
-      tasks: [false, true, false],
-    },
-    {
-      day: ['الأحد ', 'Sunday'],
-      number: 18,
-      tasks: [false, false, false],
-    },
-    {
-      day: ['الإثنين ', 'Monday'],
-      number: 19,
-      tasks: [false, false, false],
-    },
-    {
-      day: ['الثلاثاء ', 'Tuesday'],
-      number: 20,
-      tasks: [true, true, false],
-    },
-    {
-      day: ['الأربعاء ', 'Wednesday'],
-      number: 21,
-      tasks: [true, true, true],
-    },
-    {
-      day: ['الخميس ', 'Thursday'],
-      number: 22,
-      tasks: [false, false, false],
-    },
-    {
-      day: ['الجمعة ', 'Friday'],
-      number: 23,
-      tasks: [false, false, true],
-    },
-    {
-      day: ['السبت', 'Saturday'],
-      number: 24,
-      tasks: [false, true, false],
-    },
-    {
-      day: ['الأحد ', 'Sunday'],
-      number: 25,
-      tasks: [false, false, false],
-    },
-    {
-      day: ['الإثنين ', 'Monday'],
-      number: 26,
-      tasks: [false, false, false],
-    },
-    {
-      day: ['الثلاثاء ', 'Tuesday'],
-      number: 27,
-      tasks: [true, true, false],
-    },
-    {
-      day: ['الأربعاء ', 'Wednesday'],
-      number: 28,
-      tasks: [true, true, true],
-    },
-    {
-      day: ['الخميس ', 'Thursday'],
-      number: 29,
-      tasks: [false, false, false],
-    },
-    {
-      day: ['الجمعة ', 'Friday'],
-      number: 30,
-      tasks: [false, false, true],
-    },
-    {
-      day: ['السبت', 'Saturday'],
       number: 31,
-      tasks: [false, true, false],
+      tasks: [false, false, false],
     },
     {
       day: ['الأحد ', 'Sunday'],
@@ -191,7 +129,7 @@ export class LabelsService {
       tasks: [false, false, false],
     },
     {
-      day: ['الإثنين ', 'Monday'],
+      day: ['الاثنين ', 'Monday'],
       number: 2,
       tasks: [false, false, false],
     },
@@ -213,6 +151,147 @@ export class LabelsService {
     {
       day: ['الجمعة ', 'Friday'],
       number: 6,
+      tasks: [false, false, true],
+    },
+
+    {
+      day: ['السبت', 'Saturday'],
+      number: 7,
+      tasks: [false, false, false],
+    },
+    {
+      day: ['الأحد ', 'Sunday'],
+      number: 8,
+      tasks: [false, false, false],
+    },
+    {
+      day: ['الاثنين ', 'Monday'],
+      number: 9,
+      tasks: [false, false, false],
+    },
+    {
+      day: ['الثلاثاء ', 'Tuesday'],
+      number: 10,
+      tasks: [true, true, false],
+    },
+    {
+      day: ['الأربعاء ', 'Wednesday'],
+      number: 11,
+      tasks: [true, true, true],
+    },
+    {
+      day: ['الخميس ', 'Thursday'],
+      number: 12,
+      tasks: [false, false, false],
+    },
+    {
+      day: ['الجمعة ', 'Friday'],
+      number: 13,
+      tasks: [false, false, true],
+    },
+    {
+      day: ['السبت', 'Saturday'],
+      number: 14,
+      tasks: [false, false, false],
+    },
+    {
+      day: ['الأحد ', 'Sunday'],
+      number: 15,
+      tasks: [false, false, false],
+    },
+    {
+      day: ['الاثنين ', 'Monday'],
+      number: 16,
+      tasks: [false, false, false],
+    },
+    {
+      day: ['الثلاثاء ', 'Tuesday'],
+      number: 17,
+      tasks: [true, true, false],
+    },
+    {
+      day: ['الأربعاء ', 'Wednesday'],
+      number: 18,
+      tasks: [true, true, true],
+    },
+    {
+      day: ['الخميس ', 'Thursday'],
+      number: 19,
+      tasks: [false, false, false],
+    },
+    {
+      day: ['الجمعة ', 'Friday'],
+      number: 20,
+      tasks: [false, false, true],
+    },
+    {
+      day: ['السبت', 'Saturday'],
+      number: 21,
+      tasks: [false, false, false],
+    },
+    {
+      day: ['الأحد ', 'Sunday'],
+      number: 22,
+      tasks: [false, false, false],
+    },
+    {
+      day: ['الاثنين ', 'Monday'],
+      number: 23,
+      tasks: [false, false, false],
+    },
+    {
+      day: ['الثلاثاء ', 'Tuesday'],
+      number: 24,
+      tasks: [true, true, false],
+    },
+    {
+      day: ['الأربعاء ', 'Wednesday'],
+      number: 25,
+      tasks: [true, true, true],
+    },
+    {
+      day: ['الخميس ', 'Thursday'],
+      number: 26,
+      tasks: [false, false, false],
+    },
+    {
+      day: ['الجمعة ', 'Friday'],
+      number: 27,
+      tasks: [false, false, true],
+    },
+    {
+      day: ['السبت', 'Saturday'],
+      number: 28,
+      tasks: [false, false, false],
+    },
+    {
+      day: ['الأحد ', 'Sunday'],
+      number: 29,
+      tasks: [false, false, false],
+    },
+    {
+      day: ['الاثنين ', 'Monday'],
+      number: 30,
+      tasks: [false, false, false],
+    },
+    {
+      day: ['الثلاثاء ', 'Tuesday'],
+      number: 31,
+      tasks: [true, true, false],
+    },
+    {
+      day: ['الأربعاء ', 'Wednesday'],
+      number: 1,
+      tasks: [true, true, true],
+    },
+    {
+      day: ['الخميس ', 'Thursday'],
+      number: 2,
+      tasks: [false, false, false],
+    },
+    {
+      day: ['الجمعة ', 'Friday'],
+      number: 3,
       tasks: [false, false, true],
     },
   ];
@@ -239,28 +318,28 @@ export class LabelsService {
 
   // the main body data => the table data
 
-  headerColumnsAr: string[] = [
+  headerCellsAr: string[] = [
     'رقم ال id',
     'الاسم بالكامل',
     'البريد الإلكتروني',
     'ايام العمل',
     'ملفات',
   ];
-  headerColumnsEn: string[] = [
+  headerCellsEn: string[] = [
     'id number',
     'full name',
     'e-mail',
-    'work days',
+    'attendance records',
     'files',
   ];
-  headerColumns: string[] = [];
+  headerCells: string[] = [];
 
   employees: IEmp[] = [
     {
       id: 'ID-15877',
       name: 'إسم إفتراضي جديد مثال ',
       email: 'Example@company.com',
-      workDays: [true, true, false, true, true, true, false],
+      attendanceRecords: [true, true, false, true, true, true, false],
       files: [
         'كتالوج الشركة.pdf',
         '../../../assets/icons/clipboardtext.svg',
@@ -271,14 +350,14 @@ export class LabelsService {
       id: 'ID-15878',
       name: 'إسم إفتراضي جديد',
       email: 'Example@company.com',
-      workDays: [true, true, false, true, true, true, false],
+      attendanceRecords: [true, true, false, true, true, true, false],
       files: ['واجهة المستخدم .png', '../../../assets/imgs/file (3).png', 9],
     },
     {
       id: 'ID-15879',
       name: 'إسم إفتراضي جديد',
       email: 'Example@company.com',
-      workDays: [true, true, false, true, true, true, false],
+      attendanceRecords: [true, true, false, true, true, true, false],
       files: [
         'كتالوج الشركة.pdf',
         '../../../assets/icons/clipboardtext.svg',
@@ -289,21 +368,21 @@ export class LabelsService {
       id: 'ID-15880',
       name: 'إسم إفتراضي جديد مثال',
       email: 'Example@company.com',
-      workDays: [true, true, false, true, true, true, false],
+      attendanceRecords: [true, true, false, true, true, true, false],
       files: ['واجهة المستخدم .png', '../../../assets/imgs/file (3).png', 9],
     },
     {
       id: 'ID-15881',
       name: 'إسم إفتراضي جديد',
       email: 'Example@company.com',
-      workDays: [true, true, false, true, true, true, false],
+      attendanceRecords: [true, true, false, true, true, true, false],
       files: ['واجهة المستخدم .png', '../../../assets/imgs/file (3).png', 9],
     },
     {
       id: 'ID-15882',
       name: 'إسم إفتراضي جديد',
       email: 'Example@company.com',
-      workDays: [true, true, false, true, true, true, false],
+      attendanceRecords: [true, true, false, true, true, true, false],
       files: [
         'كتالوج الشركة.pdf',
         '../../../assets/icons/clipboardtext.svg',
@@ -314,14 +393,14 @@ export class LabelsService {
       id: 'ID-15883',
       name: 'إسم إفتراضي جديد',
       email: 'Example@company.com',
-      workDays: [true, true, false, true, true, true, false],
+      attendanceRecords: [true, true, false, true, true, true, false],
       files: ['واجهة المستخدم .png', '../../../assets/imgs/file (3).png', 9],
     },
     {
-      id: 'ID-15877',
+      id: 'ID-15884',
       name: 'إسم إفتراضي جديد مثال ',
       email: 'Example@company.com',
-      workDays: [true, true, false, true, true, true, false],
+      attendanceRecords: [true, true, false, true, true, true, false],
       files: [
         'كتالوج الشركة.pdf',
         '../../../assets/icons/clipboardtext.svg',
@@ -329,60 +408,10 @@ export class LabelsService {
       ],
     },
     {
-      id: 'ID-15878',
-      name: 'إسم إفتراضي جديد',
-      email: 'Example@company.com',
-      workDays: [true, true, false, true, true, true, false],
-      files: ['واجهة المستخدم .png', '../../../assets/imgs/file (3).png', 9],
-    },
-    {
-      id: 'ID-15879',
-      name: 'إسم إفتراضي جديد',
-      email: 'Example@company.com',
-      workDays: [true, true, false, true, true, true, false],
-      files: [
-        'كتالوج الشركة.pdf',
-        '../../../assets/icons/clipboardtext.svg',
-        9,
-      ],
-    },
-    {
-      id: 'ID-15880',
-      name: 'إسم إفتراضي جديد مثال',
-      email: 'Example@company.com',
-      workDays: [true, true, false, true, true, true, false],
-      files: ['واجهة المستخدم .png', '../../../assets/imgs/file (3).png', 9],
-    },
-    {
-      id: 'ID-15881',
-      name: 'إسم إفتراضي جديد',
-      email: 'Example@company.com',
-      workDays: [true, true, false, true, true, true, false],
-      files: ['واجهة المستخدم .png', '../../../assets/imgs/file (3).png', 9],
-    },
-    {
-      id: 'ID-15882',
-      name: 'إسم إفتراضي جديد',
-      email: 'Example@company.com',
-      workDays: [true, true, false, true, true, true, false],
-      files: [
-        'كتالوج الشركة.pdf',
-        '../../../assets/icons/clipboardtext.svg',
-        9,
-      ],
-    },
-    {
-      id: 'ID-15883',
-      name: 'إسم إفتراضي جديد',
-      email: 'Example@company.com',
-      workDays: [true, true, false, true, true, true, false],
-      files: ['واجهة المستخدم .png', '../../../assets/imgs/file (3).png', 9],
-    },
-    {
-      id: 'ID-15877',
+      id: 'ID-15885',
       name: 'إسم إفتراضي جديد مثال ',
       email: 'Example@company.com',
-      workDays: [true, true, false, true, true, true, false],
+      attendanceRecords: [true, true, false, true, true, true, false],
       files: [
         'كتالوج الشركة.pdf',
         '../../../assets/icons/clipboardtext.svg',
@@ -390,17 +419,17 @@ export class LabelsService {
       ],
     },
     {
-      id: 'ID-15878',
+      id: 'ID-15886',
       name: 'إسم إفتراضي جديد',
       email: 'Example@company.com',
-      workDays: [true, true, false, true, true, true, false],
+      attendanceRecords: [true, true, false, true, true, true, false],
       files: ['واجهة المستخدم .png', '../../../assets/imgs/file (3).png', 9],
     },
     {
-      id: 'ID-15879',
+      id: 'ID-15887',
       name: 'إسم إفتراضي جديد',
       email: 'Example@company.com',
-      workDays: [true, true, false, true, true, true, false],
+      attendanceRecords: [true, true, false, true, true, true, false],
       files: [
         'كتالوج الشركة.pdf',
         '../../../assets/icons/clipboardtext.svg',
@@ -408,24 +437,24 @@ export class LabelsService {
       ],
     },
     {
-      id: 'ID-15880',
+      id: 'ID-15889',
       name: 'إسم إفتراضي جديد مثال',
       email: 'Example@company.com',
-      workDays: [true, true, false, true, true, true, false],
+      attendanceRecords: [true, true, false, true, true, true, false],
       files: ['واجهة المستخدم .png', '../../../assets/imgs/file (3).png', 9],
     },
     {
-      id: 'ID-15881',
+      id: 'ID-15890',
       name: 'إسم إفتراضي جديد',
       email: 'Example@company.com',
-      workDays: [true, true, false, true, true, true, false],
+      attendanceRecords: [true, true, false, true, true, true, false],
       files: ['واجهة المستخدم .png', '../../../assets/imgs/file (3).png', 9],
     },
     {
-      id: 'ID-15882',
+      id: 'ID-15891',
       name: 'إسم إفتراضي جديد',
       email: 'Example@company.com',
-      workDays: [true, true, false, true, true, true, false],
+      attendanceRecords: [true, true, false, true, true, true, false],
       files: [
         'كتالوج الشركة.pdf',
         '../../../assets/icons/clipboardtext.svg',
@@ -433,17 +462,17 @@ export class LabelsService {
       ],
     },
     {
-      id: 'ID-15883',
+      id: 'ID-15892',
       name: 'إسم إفتراضي جديد',
       email: 'Example@company.com',
-      workDays: [true, true, false, true, true, true, false],
+      attendanceRecords: [true, true, false, true, true, true, false],
       files: ['واجهة المستخدم .png', '../../../assets/imgs/file (3).png', 9],
     },
     {
-      id: 'ID-15877',
+      id: 'ID-15893',
       name: 'إسم إفتراضي جديد مثال ',
       email: 'Example@company.com',
-      workDays: [true, true, false, true, true, true, false],
+      attendanceRecords: [true, true, false, true, true, true, false],
       files: [
         'كتالوج الشركة.pdf',
         '../../../assets/icons/clipboardtext.svg',
@@ -451,17 +480,28 @@ export class LabelsService {
       ],
     },
     {
-      id: 'ID-15878',
+      id: 'ID-15894',
+      name: 'إسم إفتراضي جديد مثال ',
+      email: 'Example@company.com',
+      attendanceRecords: [true, true, false, true, true, true, false],
+      files: [
+        'كتالوج الشركة.pdf',
+        '../../../assets/icons/clipboardtext.svg',
+        9,
+      ],
+    },
+    {
+      id: 'ID-15895',
       name: 'إسم إفتراضي جديد',
       email: 'Example@company.com',
-      workDays: [true, true, false, true, true, true, false],
+      attendanceRecords: [true, true, false, true, true, true, false],
       files: ['واجهة المستخدم .png', '../../../assets/imgs/file (3).png', 9],
     },
     {
-      id: 'ID-15879',
+      id: 'ID-15896',
       name: 'إسم إفتراضي جديد',
       email: 'Example@company.com',
-      workDays: [true, true, false, true, true, true, false],
+      attendanceRecords: [true, true, false, true, true, true, false],
       files: [
         'كتالوج الشركة.pdf',
         '../../../assets/icons/clipboardtext.svg',
@@ -469,24 +509,24 @@ export class LabelsService {
       ],
     },
     {
-      id: 'ID-15880',
+      id: 'ID-15897',
       name: 'إسم إفتراضي جديد مثال',
       email: 'Example@company.com',
-      workDays: [true, true, false, true, true, true, false],
+      attendanceRecords: [true, true, false, true, true, true, false],
       files: ['واجهة المستخدم .png', '../../../assets/imgs/file (3).png', 9],
     },
     {
-      id: 'ID-15881',
+      id: 'ID-15898',
       name: 'إسم إفتراضي جديد',
       email: 'Example@company.com',
-      workDays: [true, true, false, true, true, true, false],
+      attendanceRecords: [true, true, false, true, true, true, false],
       files: ['واجهة المستخدم .png', '../../../assets/imgs/file (3).png', 9],
     },
     {
-      id: 'ID-15882',
+      id: 'ID-15899',
       name: 'إسم إفتراضي جديد',
       email: 'Example@company.com',
-      workDays: [true, true, false, true, true, true, false],
+      attendanceRecords: [true, true, false, true, true, true, false],
       files: [
         'كتالوج الشركة.pdf',
         '../../../assets/icons/clipboardtext.svg',
@@ -494,10 +534,10 @@ export class LabelsService {
       ],
     },
     {
-      id: 'ID-15883',
+      id: 'ID-15900',
       name: 'إسم إفتراضي جديد',
       email: 'Example@company.com',
-      workDays: [true, true, false, true, true, true, false],
+      attendanceRecords: [true, true, false, true, true, true, false],
       files: ['واجهة المستخدم .png', '../../../assets/imgs/file (3).png', 9],
     },
   ];
@@ -550,7 +590,7 @@ export class LabelsService {
       this.calendarLabels = this.calendarLabelsAr;
       this.timing = this.timingAr;
       this.buttons = this.buttonsAr;
-      this.headerColumns = this.headerColumnsAr;
+      this.headerCells = this.headerCellsAr;
       this.optionsHeader = this.optionsHeaderAr;
       this.days = this.daysAr;
       this.footerData = this.footerDataAr;
@@ -565,7 +605,7 @@ export class LabelsService {
       this.calendarLabels = this.calendarLabelsEn;
       this.timing = this.timingEn;
       this.buttons = this.buttonsEn;
-      this.headerColumns = this.headerColumnsEn;
+      this.headerCells = this.headerCellsEn;
       this.optionsHeader = this.optionsHeaderEn;
       this.days = this.daysEn;
       this.footerData = this.footerDataEn;

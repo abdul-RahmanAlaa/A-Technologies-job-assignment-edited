@@ -1,6 +1,11 @@
 .calendar {
+  width: 100%;
   padding-block-start: 1.59rem;
-  padding-inline: 1.8rem 1.59rem;
+  padding-inline: 0.8rem 0.59rem;
+
+  @media (max-width: 320px) {
+    padding-inline: 0;
+  }
 
   & * > img,
   * > h3 {
@@ -12,7 +17,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-block-end: 1.12rem;
 
     & > div {
       display: inherit;
@@ -54,81 +58,65 @@
   & > div > ul {
     list-style: none;
     display: flex;
+    justify-content: space-around;
     padding-block: 0.61rem;
 
     border-block: 0.75px var(--calendar-border) dashed;
 
     & > li {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-inline: 0.1rem;
-      padding-inline: 0.5rem;
-      border-radius: 0.59rem;
+      width: 100%;
+      min-width: 2.53rem;
+      min-height: 4.73rem;
 
-      & > p {
-        color: var(--calendar-label);
-        font-size: var(--fs-5xs);
-        margin: 0.5rem 0 0 0;
-        cursor: pointer;
+      & > input {
+        display: none;
       }
 
-      & > .date {
+      & > label {
         position: relative;
-        height: 1.79rem;
-        margin-block-start: 0.66rem;
-        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        margin-block: 0.5rem;
+        border-radius: 0.59rem;
+        margin-inline: 0.1rem;
+
+        padding-block: 0.25rem 1.25rem;
+
+        & > p {
+          color: var(--calendar-label);
+          font-size: var(--fs-5xs);
+          cursor: pointer;
+          margin: 0.5rem 0;
+
+          &.number {
+            color: var(--bg-3);
+            font-size: var(--fs-l);
+            font-weight: var(--fw-l);
+            border-radius: 50%;
+            padding: 0.5rem;
+          }
+        }
+
+        & > div {
+          height: 0.281rem;
+
+          & > img {
+            width: 0.35rem;
+            margin-inline: 0.1rem;
+          }
+        }
+      }
+
+      & > input:checked ~ label {
+        background-color: var(--yellow);
 
         & > .number {
-          position: absolute;
-          color: var(--bg-3);
-          font-size: var(--fs-l);
-          font-weight: var(--fw-l);
-          margin: 0;
-          top: 0.3rem;
-          left: 0.4rem;
-          z-index: 99;
-        }
-
-        &::after {
-          content: "";
-
-          visibility: hidden;
-
-          display: block;
-          height: 1.79rem;
-          width: 1.79rem;
-
-          background-color: var(--calendar-circle);
-          border-radius: 50%;
-        }
-
-        &.picked::after {
-          visibility: visible;
-        }
-        &.picked > p {
+          background-color: var(--black);
           color: var(--white);
         }
       }
-
-      & > div > img {
-        width: 0.35rem;
-        margin-inline: 0.1rem;
-      }
     }
   }
-}
-
-.p-1 {
-  background-color: var(--yellow);
-  border-radius: 0.59rem;
-}
-
-.day-1::after {
-  visibility: visible !important;
-}
-
-.day-1 > p {
-  color: var(--white) !important;
 }

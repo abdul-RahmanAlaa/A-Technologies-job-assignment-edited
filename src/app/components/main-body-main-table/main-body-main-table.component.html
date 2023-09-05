@@ -1,22 +1,136 @@
-<section class="container">
-  <table class="table" [ngClass]="isArabic ? 'ar' : 'en'">
-    <thead class="table__header">
-      <tr class="table__header--row">
-        <th
-          class="table__header--row__cell"
-          [class]="'col-' + index"
-          *ngFor="
-            let column of labelsService.headerColumns.slice(0, 4);
-            let index = index
-          "
-        >
-          {{ column }}
+<section class="table" [ngClass]="isArabic ? 'ar' : 'en'">
+  <ul class="table__column" [ngClass]="keys[0]">
+    <li class="table__column--row">
+      <p class="table__column--row__header">
+        <span>
+          {{ labelsService.headerCells[0] }}
+        </span>
+
+        <img class="sort" src="../../../assets/icons/arrow-swap.svg" alt="" />
+      </p>
+
+      <ul
+        class="table__column--row__body"
+        *ngFor="
+          let cell of labelsService.employees.slice(start, end);
+          let index = index
+        "
+      >
+        <li class="table__column--row__body--cells">
+          {{ getCellValue(labelsService.headerCells[0], cell) }}
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul class="table__column" [ngClass]="keys[1]">
+    <li class="table__column--row">
+      <p class="table__column--row__header">
+        <span>
+          {{ labelsService.headerCells[1] }}
+        </span>
+
+        <img class="sort" src="../../../assets/icons/arrow-swap.svg" alt="" />
+      </p>
+
+      <ul
+        class="table__column--row__body"
+        *ngFor="
+          let cell of labelsService.employees.slice(start, end);
+          let index = index
+        "
+      >
+        <li class="table__column--row__body--cells">
+          <span
+            class="tooltip"
+            *ngIf="getCellValue(labelsService.headerCells[1], cell).length > 20"
+          >
+            {{ getCellValue(labelsService.headerCells[1], cell) }}
+          </span>
+          <span class="text">
+            {{ getCellValue(labelsService.headerCells[1], cell) }}
+          </span>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul class="table__column" [ngClass]="keys[2]">
+    <li class="table__column--row">
+      <p class="table__column--row__header">
+        <span>
+          {{ labelsService.headerCells[2] }}
+        </span>
+
+        <img class="sort" src="../../../assets/icons/arrow-swap.svg" alt="" />
+      </p>
+
+      <ul
+        class="table__column--row__body"
+        *ngFor="
+          let cell of labelsService.employees.slice(start, end);
+          let index = index
+        "
+      >
+        <li class="table__column--row__body--cells">
+          {{ getCellValue(labelsService.headerCells[2], cell) }}
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul class="table__column" [ngClass]="keys[3]">
+    <li class="table__column--row">
+      <p class="table__column--row__header">
+        <span>
+          {{ labelsService.headerCells[3] }}
+        </span>
+
+        <img class="sort" src="../../../assets/icons/arrow-swap.svg" alt="" />
+      </p>
+
+      <ul
+        class="table__column--row__body"
+        *ngFor="let cell of labelsService.employees.slice(start, end)"
+      >
+        <li class="table__column--row__body--cells">
+          <ul class="attendance">
+            <li
+              class="attendance__day"
+              *ngFor="let day of labelsService.days; let index = index"
+            >
+              <input
+                type="checkbox"
+                [id]="cell.id + day"
+                [name]="cell.id + day"
+                [value]="cell.id + day"
+                [(ngModel)]="cell.attendanceRecords[index]"
+              />
+
+              <label [for]="cell.id + day">
+                <span>
+                  {{ day }}
+                </span>
+              </label>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul class="table__column" [ngClass]="keys[4]">
+    <li class="table__column--row">
+      <div class="table__column--row__header">
+        <div class="space"></div>
+        <div class="text">
+          <span>
+            {{ labelsService.headerCells[4] }}
+          </span>
+
           <img class="sort" src="../../../assets/icons/arrow-swap.svg" alt="" />
-        </th>
-        <th colspan="2" class="table__header--row__cell">
-          {{ labelsService.headerColumns[4] }}
-        </th>
-        <th class="table__header--row__cell settings">
+        </div>
+        <div class="settings">
           <svg
             role="button"
             [ngClass]="options ? 'active' : ''"
@@ -43,86 +157,78 @@
               </g>
             </g>
           </svg>
-          <!--the start of the settings menu -->
-          <div [ngClass]="{ visible: options, optionsEn: !isArabic }">
+
+          <div
+            class="settings__menu"
+            [ngClass]="{ visible: options, optionsEn: !isArabic }"
+          >
             <header>
               <h3 *ngIf="isArabic">{{ labelsService.optionsHeader }}</h3>
               <h3 *ngIf="!isArabic">{{ labelsService.optionsHeader }}</h3>
             </header>
-            <ul>
-              <li *ngFor="let column of labelsService.headerColumns">
-                <img src="../../../assets/icons/Vector.svg" alt="" />
-                <label [for]="column">{{ column }}</label>
+
+            <ul cdkDropList (cdkDropListDropped)="drop($event)">
+              <li
+                cdkDrag
+                cdkDragLockAxis="y"
+                *ngFor="
+                  let header of labelsService.headerCells;
+                  let index = index
+                "
+              >
+                <img
+                  cdkDragHandle
+                  src="../../../assets/icons/Vector.svg"
+                  alt=""
+                />
+                <label [for]="header">{{ header }}</label>
                 <input
                   type="checkbox"
-                  [id]="'column' + column"
-                  [name]="column"
-                  [value]="column"
+                  [id]="'header' + header"
+                  [name]="header"
+                  [value]="header"
                   (change)="optionStatus($event)"
                   checked
                 />
               </li>
             </ul>
           </div>
-        </th>
-        <!-- <th class="table__header--row__cell"></th> -->
-        <!-- the end of the settings menu -->
-      </tr>
-    </thead>
+        </div>
+      </div>
 
-    <tbody class="table__body" cdkDropList (cdkDropListDropped)="drop($event)">
-      <tr
-        class="table__body--row"
-        cdkDrag
-        cdkDragLockAxis="y"
-        *ngFor="let employee of labelsService.employees.slice(start, end)"
+      <ul
+        class="table__column--row__body"
+        *ngFor="
+          let cell of labelsService.employees.slice(start, end);
+          let index = index
+        "
       >
-        <td class="table__body--row__cell id">
-          {{ employee.id }}
-        </td>
-        <td class="table__body--row__cell name">
-          <span class="tooltip" *ngIf="employee.name.length > 20">
-            {{ employee.name }}
-          </span>
-          {{ employee.name }}
-        </td>
-        <td class="table__body--row__cell email">
-          {{ employee.email }}
-        </td>
-        <td class="table__body--row__cell list">
-          <ul class="table__body--row__cell--weekList">
-            <li
-              class="table__body--row__cell--weekList__day"
-              *ngFor="let day of labelsService.days; let index = index"
-            >
-              <input
-                type="checkbox"
-                [id]="employee.id + day"
-                [name]="employee.id + day"
-                [value]="employee.id + day"
-                [(ngModel)]="employee.workDays[index]"
-              />
-              <label [for]="employee.id + day">{{ day }}</label>
-            </li>
-          </ul>
-        </td>
-        <td class="table__body--row__cell file" [title]="employee.files[0]">
-          <img class="file__image" [src]="employee.files[1]" alt="file" />
-        </td>
-        <td class="table__body--row__cell fileData" [title]="employee.files[0]">
-          <div>
-            <span>{{ employee.files[0] }}</span>
+        <li class="table__column--row__body--cells">
+          <div class="body">
+            <img class="data__image" [src]="cell.files[1]" alt="file" />
+            <div class="data">
+              <div>
+                <p>
+                  {{ cell.files[0] }}
+                </p>
+
+                <p class="span">
+                  {{ cell.files[2] }}
+                  <span> mb </span>
+                </p>
+              </div>
+            </div>
           </div>
-          <p>{{ employee.files[2] }}mb</p>
-        </td>
-        <td class="table__body--row__cell dragHandle" cdkDragHandle>
-          <img
-            class="file__icon"
-            src="../../../assets/icons/clipboardtext.svg"
-          />
-          <img src="../../../assets/icons/Group 1000011388.svg" alt="" />
-        </td>
-      </tr>
-    </tbody>
-  </table>
+          <div class="handle">
+            <img
+              class="download"
+              src="../../../assets/icons/clipboardtext.svg"
+              alt=""
+            />
+            <img src="../../../assets/icons/Group 1000011388.svg" alt="" />
+          </div>
+        </li>
+      </ul>
+    </li>
+  </ul>
 </section>
